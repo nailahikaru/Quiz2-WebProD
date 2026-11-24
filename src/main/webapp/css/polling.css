@@ -1,0 +1,275 @@
+:root {
+  --sky-100: #EBF3FF;
+  --sky-300: #A9EEFE;
+  --sky-500: #54A1F4;
+  --sky-600: #599CE1;
+  --pink-100: #FDEFF4;
+  --pink-200: #FFC0D3;
+  --pink-400: #ECA4E0;
+  --pink-500: #FF5C8D;
+  --ink-900: #0E2341;
+  --ink-700: #222B3A;
+  --ink-500: #5B6B7C;
+  --glass: rgba(255, 255, 255, 0.55);
+  --glass-strong: rgba(255, 255, 255, 0.78);
+  --brand-gradient: linear-gradient(90deg, #54A1F4 0%, #ECA4E0 100%);
+}
+
+/* Navbar fixed-top */
+.page-main {
+  padding-top: 6.5rem;
+  padding-bottom: 3rem;
+}
+
+.page-head {
+  background: var(--glass);
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+  border-radius: 20px;
+  padding: 1.5rem 1.75rem;
+  margin-bottom: 1.75rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.page-head h1,
+.page-head h2 {
+  margin: 0;
+  font-weight: 600;
+  color: var(--ink-900);
+}
+
+.page-head p {
+  margin: .25rem 0 0;
+  color: var(--ink-500);
+}
+
+/* Daftar polling */
+
+.poll-card,
+.glass-card {
+  background: var(--glass);
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  border-radius: 18px;
+  box-shadow: 0 6px 20px rgba(84, 161, 244, 0.12);
+  color: var(--ink-900);
+}
+
+.poll-card .card-body { padding: 1.4rem 1.5rem; }
+
+.poll-card h5 {
+  font-weight: 600;
+  color: var(--ink-900);
+}
+
+.poll-meta {
+  color: var(--ink-500);
+  font-size: .9rem;
+}
+
+/* Badge Open/Closed */
+.poll-card .badge {
+  font-weight: 500;
+  padding: .4rem .75rem;
+  border-radius: 999px;
+}
+
+.poll-card .badge.bg-success {
+  background-color: #D6F5E3 !important;
+  color: #1B7A47;
+}
+
+.poll-card .badge.bg-secondary {
+  background-color: #E4E8EE !important;
+  color: #5B6B7C;
+}
+
+/* Keadaan kosong */
+.empty-state {
+  text-align: center;
+  padding: 2.5rem 1rem;
+  color: var(--ink-500);
+}
+
+.empty-state .bi {
+  font-size: 2.5rem;
+  color: var(--sky-500);
+}
+
+/* Pilihan suara polling */
+
+.option-card {
+  background: var(--glass-strong);
+  border: 2px solid transparent;
+  border-radius: 14px;
+  padding: .9rem 1.1rem;
+  cursor: pointer;
+  color: var(--ink-900);
+  transition: border-color .2s ease, box-shadow .2s ease, background-color .2s ease;
+}
+
+.option-card:hover {
+  border-color: var(--sky-300);
+  box-shadow: 0 4px 14px rgba(84, 161, 244, 0.18);
+}
+
+.option-card:has(input:checked) {
+  border-color: var(--sky-500);
+  background: var(--sky-100);
+}
+
+.option-card input[type="radio"] {
+  margin-right: .6rem;
+  accent-color: var(--sky-500);
+}
+
+/* Hasil suara polling */
+
+.progress {
+  height: 1.1rem;
+  background-color: rgba(255, 255, 255, 0.75);
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.poll-bar {
+  background: var(--brand-gradient) !important;
+  border-radius: 999px;
+}
+
+/* Animasi bar saat hasil tampil */
+@media (prefers-reduced-motion: no-preference) {
+  .poll-bar {
+    animation: bar-grow .8s ease-out both;
+    transform-origin: left center;
+  }
+  @keyframes bar-grow {
+    from { transform: scaleX(0); }
+    to   { transform: scaleX(1); }
+  }
+}
+
+/* Form */
+
+.form-panel {
+  background: var(--glass-strong);
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+  border-radius: 20px;
+  padding: 1.75rem;
+  box-shadow: 0 6px 20px rgba(84, 161, 244, 0.12);
+}
+
+.form-label {
+  font-weight: 500;
+  color: var(--ink-700);
+}
+
+.form-control {
+  border-radius: 12px;
+  border: 1px solid #CFDAEA;
+  padding: .65rem .9rem;
+}
+
+.form-control:focus {
+  border-color: var(--sky-500);
+  box-shadow: 0 0 0 .25rem rgba(84, 161, 244, 0.25);
+}
+
+/* Button */
+
+.btn-primary {
+  background: var(--brand-gradient);
+  border: 0;
+  color: var(--ink-900);
+  font-weight: 600;
+  border-radius: 12px;
+  padding: .55rem 1.2rem;
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+  background: linear-gradient(90deg, #4693E8 0%, #E48FD6 100%);
+  color: var(--ink-900);
+}
+
+.btn-outline-secondary {
+  border-radius: 12px;
+  color: var(--ink-500);
+  border-color: #B9C6D8;
+}
+
+.btn-outline-secondary:hover {
+  background: var(--sky-100);
+  color: var(--ink-700);
+  border-color: var(--sky-500);
+}
+
+.btn-outline-danger {
+  border-radius: 12px;
+}
+
+.btn-sm { border-radius: 10px; }
+
+/* Tombol keluar di navbar */
+.btn-logout {
+  border: 1px solid #5B6B7C;
+  color: #222B3A;
+  background: transparent;
+  border-radius: 12px;
+  padding: .3rem .9rem;
+  font-size: .9rem;
+}
+
+.btn-logout:hover {
+  background: rgba(255, 255, 255, 0.55);
+  color: #222B3A;
+}
+
+/* Notifikasi */
+
+.alert {
+  border: 0;
+  border-radius: 14px;
+}
+
+/* Halaman login */
+
+.auth-wrap {
+  min-height: calc(100vh - 11rem);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.auth-card {
+  width: 100%;
+  max-width: 26rem;
+}
+
+.auth-card h1 {
+  font-weight: 600;
+  color: var(--ink-900);
+}
+
+/* Fokus keyboard */
+
+a:focus-visible,
+button:focus-visible,
+.option-card:focus-within {
+  outline: 3px solid var(--sky-500);
+  outline-offset: 2px;
+}
+
+/* HP */
+
+@media (max-width: 575.98px) {
+  .page-main { padding-top: 5.5rem; }
+  .page-head { padding: 1.1rem 1.25rem; }
+  .poll-card .card-body { padding: 1.1rem; }
+}
